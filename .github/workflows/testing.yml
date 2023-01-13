@@ -13,11 +13,11 @@ jobs:
     if: github.event.pull_request.base.ref == 'main'   # check the target branch if it's master
     steps:
         - name: trigger
-          run: its master"
+          run: "its main"
   Job2:
     name: target branch checking2
     runs-on: ubuntu-latest
     if: github.event.pull_request.base.ref != 'main' # check the target branch if it's master
     steps:
         - name: trigger
-          run: echo "its not master"
+          run: echo "its not main"
