@@ -7,17 +7,13 @@ env:
   run: echo "$GITHUB_CONTEXT"
   
 jobs:
-  Job1:
-    name: target branch checking1
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.base.ref == 'main'   # check the target branch if it's master
-    steps:
-        - name: trigger
-          run: "its main"
-  Job2:
+  getting_branch_names:
     name: target branch checking2
     runs-on: ubuntu-latest
     if: github.event.pull_request.base.ref != 'main' # check the target branch if it's master
     steps:
-        - name: trigger
-          run: echo "its not main"
+        - name: Git checkout
+          uses: actions/checkout@v3
+        - name: Branch name
+          run: echo running on branch ${GITHUB_REF##*/}
+               echo merging with branch ${GITHUB_BASE##*/}
