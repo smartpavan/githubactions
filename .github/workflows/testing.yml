@@ -16,8 +16,8 @@ jobs:
 
           uses: actions/checkout@v3
         - name: Branch name
-          run: echo ${{ github.ref }}
-               echo ${{ github.base }}
+          run: echo ${{ github.base }}
+               echo ${{ github.ref }}
 #           echo running on branch ${GITHUB_REF##*/}
 #                echo merging with branch ${GITHUB_BASE##*/}
 #                printenv
