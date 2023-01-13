@@ -20,5 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.base.ref != 'main' # check the target branch if it's master
     steps:
-        - name: trigger
-          run: echo Hello world from $GITHUB_HEAD_REF!
+        - name: Git checkout
+          uses: actions/checkout@v1
+        - name: Branch name
+          run: echo running on branch ${GITHUB_REF##*/}
