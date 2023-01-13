@@ -21,5 +21,4 @@ jobs:
     if: github.event.pull_request.base.ref != 'main' # check the target branch if it's master
     steps:
         - name: trigger
-          run: echo "${{ github.base_ref }}"
-               echo "${{github.event.pull_request.base.ref}}"
+          run: echo Hello world from $GITHUB_HEAD_REF!
