@@ -13,8 +13,12 @@ jobs:
     if: github.event.pull_request.base.ref != 'main' # check the target branch if it's master
     steps:
         - name: Git checkout
-          uses: actions/checkout@v1
+
+          uses: actions/checkout@v3
         - name: Branch name
           run: echo running on branch ${GITHUB_REF##*/}\n
                echo merging with branch ${GITHUB_BASE##*/}\n
                echo merging with branch ${github.base_ref}
+               printenv
+
+
