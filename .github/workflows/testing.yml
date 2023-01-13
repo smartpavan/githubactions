@@ -18,6 +18,7 @@ jobs:
         - name: Branch name
           run: echo ${{ github.base }}
                echo ${{ github.ref }}
+               more $GITHUB_EVENT_PATH
 #           echo running on branch ${GITHUB_REF##*/}
 #                echo merging with branch ${GITHUB_BASE##*/}
 #                printenv
